@@ -42,6 +42,10 @@ public class GETaxHelperOverlay extends Overlay
     private static final Color PROFIT_COLOR = new Color(0, 180, 0);
     private static final Color LOSS_COLOR = Color.RED;
 
+    // Wide enough for "Total received" next to a 250m+ value on one line;
+    // LineComponent cannot wrap unbroken numbers, it overlaps them instead.
+    private static final int PANEL_WIDTH = 220;
+
     private final GETaxHelperPlugin plugin;
     private final GETaxHelperConfig config;
     private final PanelComponent panelComponent = new PanelComponent();
@@ -53,6 +57,7 @@ public class GETaxHelperOverlay extends Overlay
         this.config = config;
         setPosition(OverlayPosition.TOP_LEFT);
         setLayer(OverlayLayer.ABOVE_WIDGETS);
+        panelComponent.setPreferredSize(new Dimension(PANEL_WIDTH, 0));
     }
 
     @Override
@@ -95,8 +100,7 @@ public class GETaxHelperOverlay extends Overlay
                 .build());
 
         panelComponent.getChildren().add(LineComponent.builder()
-                .left("Selling")
-                .right(offer.itemName)
+                .left(offer.itemName)
                 .build());
 
         if (perItem)
