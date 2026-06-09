@@ -99,8 +99,8 @@ public interface GETaxHelperConfig extends Config
     @ConfigItem(
             position = 4,
             keyName = "highlightLoss",
-            name = "Color losses red",
-            description = "Color the margin and total received red when the sale is a post-tax loss (green when profitable)"
+            name = "Color gains/losses",
+            description = "Color the margin and total received green on a post-tax profit and red on a loss"
     )
     default boolean highlightLoss()
     {
