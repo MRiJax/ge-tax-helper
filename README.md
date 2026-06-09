@@ -11,6 +11,18 @@ A RuneLite plugin that shows what you'll actually receive after the 2% Grand Exc
 
 The overlay only appears while you're setting up a **sell** offer at the Grand Exchange — buy offers are never taxed, so it stays out of the way.
 
+## Screenshots
+
+The overlay updates live as you set up a sell offer at the Grand Exchange.
+
+**Profit** — post-tax proceeds clear the guide buy price, so the margin shows green:
+
+![GE Tax Helper overlay on a profitable Obsidian platebody sell offer, margin in green](profit.png)
+
+**Loss** — priced below the break-even, so the margin turns red:
+
+![GE Tax Helper overlay on a loss-making sell offer, margin in red](loss.png)
+
 ## How the tax is calculated
 
 Following the [OSRS Wiki](https://oldschool.runescape.wiki/w/Grand_Exchange#Tax) rules:
